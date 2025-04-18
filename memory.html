@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEMORY 1.0</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    header {
+      text-align: left;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #1db954;
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      height: 80px;
+      border: none;
+      margin-bottom: 30px;
+    }
+
+    .playlist {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+      gap: 1rem;
+    }
+
+    .track {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background-color: #181818;
+      border-radius: 8px;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .track:hover {
+      background-color: #282828;
+    }
+
+    .track img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .track-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .track-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .track-artist {
+      font-size: 0.85rem;
+      color: #b3b3b3;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #181818;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MEMORY 1.0</h1>
+    <iframe src="https://open.spotify.com/embed/track/1AJuAdgOh2qfF0BP2ZY3vZ?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </header>
+
+  <section class="playlist">
+    <div class="track" onclick="showModal('photo1.jpg', 'your selfie tandas update')">
+      <img src="photo1.jpg" alt="">
+      <div class="track-info">
+        <div class="track-title">your selfie tandas update</div>
+        <div class="track-artist">tandas UTHM</div>
+      </div>
+    </div>
+    <div class="track" onclick="showModal('photo2.jpg', 'makanan??')">
+      <img src="photo2.jpg" alt="">
+      <div class="track-info">
+        <div class="track-title">makanan??</div>
+        <div class="track-artist">collector space cafe</div>
+      </div>
+    </div>
+    <div class="track" onclick="showModal('photo3.jpg', 'you with hadiah ibu🤩')">
+      <img src="photo3.jpg" alt="">
+      <div class="track-info">
+        <div class="track-title">you with hadiah ibu🤩</div>
+        <div class="track-artist">kedai hadiah wetex</div>
+      </div>
+    </div>
+    <div class="track" onclick="showModal('photo4.jpg', 'you + ur matcha dengar i yap pasal cerita hantu hsm😂')">
+      <img src="photo4.jpg" alt="">
+      <div class="track-info">
+        <div class="track-title">you + ur matcha dengar i yap pasal cerita hantu hsm😂</div>
+        <div class="track-artist">depan umno muar</div>
+      </div>
+    </div>
+    <div class="track" onclick="showModal('photo5.jpg', 'me buying ur flowers☺️✨')">
+      <img src="photo5.jpg" alt="">
+      <div class="track-info">
+        <div class="track-title">me buying ur flowers☺️✨</div>
+        <div class="track-artist">otw pi parking</div>
+      </div>
+    </div>
+    <div class="track" onclick="showModal('photo6.jpg', 'you with flowers🥰')">
+      <img src="photo6.jpg" alt="">
+      <div class="track-info">
+        <div class="track-title">you with flowers🥰</div>
+        <div class="track-artist">parking UTHM</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modal-img" src="" alt="">
+      <div class="track-title" id="modal-title"></div>
+      <div class="track-artist">aqilaaa</div>
+    </div>
+  </div>
+
+  <script>
+    function showModal(src, title) {
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal-title').innerText = title;
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
